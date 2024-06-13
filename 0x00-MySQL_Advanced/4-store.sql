@@ -1,0 +1,6 @@
+-- Script for Triggers
+CREATE TRIGGER AFTER INSERT ON TBL_NAME FOR EACH ROW
+
+BEGIN
+	SET NEW.quantity = OLD.quantity + 1
+END;
