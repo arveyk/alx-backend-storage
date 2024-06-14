@@ -1,6 +1,4 @@
 -- Script to create a users table
-CREATE DATABASE IF NOT EXISTS holberton;
-USE `holberton`;
 CREATE TABLE IF NOT EXISTS users (
 	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR(255) UNIQUE NOT NULL,
