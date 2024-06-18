@@ -14,4 +14,3 @@ def list_all(mongo_collection):
     collection = []
     for lst in mongo_collection.find():
         collection.append(lst)
-
