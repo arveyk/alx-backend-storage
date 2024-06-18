@@ -11,6 +11,7 @@ def list_all(mongo_collection):
     Returns: empty lidy if no docs  are in the collection, list of
     documents otherwise
     """
-    client = MongoClient()
-    db = client.mongo_collection
-    return db.find()
+    collection = []
+    for lst in mongo_collection.find():
+        collection.append(lst)
+
