@@ -1,4 +1,2 @@
 // Delete a record by match
-var bulk = db.school.initializeOrderedBulkOp();
-bulk.find({ "name": "Holberton school" }).remove();
-bulk.execute()
+db.school.deleteMany({ "name": "Holberton school" })
