@@ -4,6 +4,7 @@
 import redis
 import requests
 
+
 def get_page(url: str) -> str:
     """
     Function that obtains contents from the url and returns it
