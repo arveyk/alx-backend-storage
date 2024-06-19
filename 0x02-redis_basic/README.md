@@ -1,0 +1,3 @@
+<-- REDIS -->
+Is a fast in-memory key-value store. It has a wide range of applications and canbe used with Bash, C, PHP, Rust, SQL...
+It has a very simple syntax
