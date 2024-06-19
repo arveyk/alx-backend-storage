@@ -7,6 +7,9 @@ import requests
 def get_page(url: str) -> str:
     """
     Function that obtains contents from the url and returns it
+    Args:
+        url: the url to look up
+    Returns: the HTML resource retrieved
     """
     red = redis.Redis()
     count = 0
