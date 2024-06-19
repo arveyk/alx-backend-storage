@@ -12,8 +12,8 @@ class Cache:
     def __init__(self) -> None:
         """initializes the instances of Cache class
         """
-        _redis = redis.Redis()
-        _redis.flushdb()
+        self._redis = redis.Redis()
+        self._redis.flushdb()
 
     def store(self, data: Any) -> str:
         """
@@ -22,10 +22,10 @@ class Cache:
             Data: data passed to the function
         Returns: a key string
         """
-        red = redis.Redis()
+        self._redis = redis.Redis()
         """generate random key using uuid"""
         key = str(uuid.uuid4())
 
         # store input_data in redis using the random key
-        red.set(key, data)
+        self._redis.set(key, data)
         return key
