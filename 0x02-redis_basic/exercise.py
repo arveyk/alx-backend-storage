@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Redis module
 """
+from collections.abc import Callable
 import redis
 from typing import Any
 import uuid
@@ -28,3 +29,31 @@ class Cache:
 
         self._redis.set(key, data)
         return key
+
+    def get(self, key: str, fn: Callable) -> Any:
+        """
+        Converts data to desired format using another callable function
+        Args:
+            key: data to convert
+            fn: the function to call
+        Returns: null if key is Null, the converted string otherwise
+        """ 
+        if key is None:
+            return None
+        if fn:
+            fn(key)
+
+    def get_str(self, data):
+        """string from key
+        """
+        decoded = self._redis.get(data)
+        return str(decode)
+
+    def get_int(self, data):
+        """
+        Get int from string
+        """
+        decode = self._redis.get(data)
+        return int(decode)
+
+
